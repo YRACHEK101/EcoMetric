@@ -127,6 +127,99 @@ const SettingsPage = () => {
               </div>
             </Card>
           </TabsContent>
+
+          <TabsContent value="billing">
+            <Card className="p-6">
+              <h2 className="text-lg font-semibold mb-4">Billing Settings</h2>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-md font-medium">Payment Methods</h3>
+                  <div className="border rounded-lg p-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <CreditCard className="h-6 w-6" />
+                      <div>
+                        <p className="font-medium">•••• •••• •••• 4242</p>
+                        <p className="text-sm text-gray-500">Expires 04/2024</p>
+                      </div>
+                    </div>
+                    <Button variant="outline" size="sm">Edit</Button>
+                  </div>
+                  <Button variant="outline" className="w-full">Add New Payment Method</Button>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-md font-medium">Billing Address</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="address">Street Address</Label>
+                      <Input id="address" placeholder="123 Main St" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="city">City</Label>
+                      <Input id="city" placeholder="New York" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="state">State</Label>
+                      <Input id="state" placeholder="NY" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="zipCode">ZIP Code</Label>
+                      <Input id="zipCode" placeholder="10001" />
+                    </div>
+                  </div>
+                  <Button>Update Billing Address</Button>
+                </div>
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="store">
+            <Card className="p-6">
+              <h2 className="text-lg font-semibold mb-4">Store Settings</h2>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-md font-medium">Store Information</h3>
+                  <div className="space-y-2">
+                    <Label htmlFor="storeName">Store Name</Label>
+                    <Input id="storeName" placeholder="My Awesome Store" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="storeDescription">Store Description</Label>
+                    <Input id="storeDescription" placeholder="Your store description" />
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-md font-medium">Business Hours</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="openTime">Opening Time</Label>
+                      <Input id="openTime" type="time" defaultValue="09:00" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="closeTime">Closing Time</Label>
+                      <Input id="closeTime" type="time" defaultValue="17:00" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-md font-medium">Store Preferences</h3>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="storeStatus">Store Status</Label>
+                    <Switch id="storeStatus" defaultChecked />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="inventory">Auto-update Inventory</Label>
+                    <Switch id="inventory" />
+                  </div>
+                </div>
+                
+                <Button>Save Store Settings</Button>
+              </div>
+            </Card>
+          </TabsContent>
+
         </Tabs>
       </div>
     </DashboardLayout>
