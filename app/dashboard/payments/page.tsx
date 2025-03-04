@@ -64,7 +64,7 @@ const PaymentsPage = () => {
                 <TableCell>{payment.method}</TableCell>
                 <TableCell>
                   <Badge 
-                    variant={payment.status === "completed" ? "success" : "pending"}
+                    variant={payment.status === "completed" ? "default" : "secondary"}
                     className={
                       payment.status === "completed" 
                         ? "bg-green-100 text-green-800" 
