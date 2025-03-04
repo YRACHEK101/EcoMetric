@@ -64,14 +64,14 @@ const PaymentsPage = () => {
     <DashboardLayout>
       <div className="container mx-auto p-4 space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Payments</h1>
+          <h1 className="text-2xl font-bold">Paiements</h1>
           <div className="flex gap-4">
             <Card className="p-4 bg-green-50">
-              <p className="text-sm text-green-600">Total Revenue</p>
-              <p className="text-2xl font-bold text-green-700">$12,345</p>
+              <p className="text-sm text-green-600">Revenu Total</p>
+              <p className="text-2xl font-bold text-green-700">12,345 €</p>
             </Card>
             <Card className="p-4 bg-blue-50">
-              <p className="text-sm text-blue-600">Pending Payments</p>
+              <p className="text-sm text-blue-600">Paiements en attente</p>
               <p className="text-2xl font-bold text-blue-700">5</p>
             </Card>
           </div>
@@ -104,12 +104,12 @@ const PaymentsPage = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Invoice ID</TableHead>
+                <TableHead>Numéro de facture</TableHead>
                 <TableHead>Date</TableHead>
-                <TableHead>Customer</TableHead>
-                <TableHead>Amount</TableHead>
-                <TableHead>Payment Method</TableHead>
-                <TableHead>Status</TableHead>
+                <TableHead>Client</TableHead>
+                <TableHead>Montant</TableHead>
+                <TableHead>Méthode de paiement</TableHead>
+                <TableHead>Statut</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

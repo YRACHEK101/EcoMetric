@@ -21,32 +21,32 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const sidebarItems = [
   {
-    title: "Dashboard",
+    title: "Tableau de bord",
     href: "/dashboard",
     icon: LayoutDashboard,
   },
   {
-    title: "Products",
+    title: "Produits",
     href: "/dashboard/products",
     icon: Package,
   },
   {
-    title: "Orders",
+    title: "Commandes",
     href: "/dashboard/orders",
     icon: ShoppingBag,
   },
   {
-    title: "Customers",
+    title: "Clients",
     href: "/dashboard/customers",
     icon: Users,
   },
   {
-    title: "Analytics",
+    title: "Analytique",
     href: "/dashboard/analytics",
     icon: BarChart3,
   },
   {
-    title: "Payments",
+    title: "Paiements",
     href: "/dashboard/payments",
     icon: CreditCard,
   },
@@ -56,7 +56,7 @@ const sidebarItems = [
     icon: MessageSquare,
   },
   {
-    title: "Settings",
+    title: "Paramètres",
     href: "/dashboard/settings",
     icon: Settings,
   },
@@ -82,7 +82,7 @@ export function Sidebar({ isMobile = false }: SidebarProps) {
         {isMobile && (
           <Button variant="ghost" size="icon" className="ml-auto">
             <X className="h-5 w-5" />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">Fermer</span>
           </Button>
         )}
       </div>
@@ -108,7 +108,7 @@ export function Sidebar({ isMobile = false }: SidebarProps) {
       <div className="mt-auto border-t p-4">
         <Button variant="outline" className="w-full justify-start gap-2">
           <LogOut className="h-4 w-4" />
-          Logout
+          Déconnexion
         </Button>
       </div>
     </div>

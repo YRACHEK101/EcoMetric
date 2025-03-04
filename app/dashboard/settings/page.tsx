@@ -41,7 +41,7 @@ const SettingsPage = () => {
           <TabsList className="grid grid-cols-5 gap-4 bg-muted p-1">
             <TabsTrigger value="account" className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              Account
+              Compte
             </TabsTrigger>
             <TabsTrigger value="notifications" className="flex items-center gap-2">
               <Bell className="h-4 w-4" />
@@ -49,37 +49,37 @@ const SettingsPage = () => {
             </TabsTrigger>
             <TabsTrigger value="security" className="flex items-center gap-2">
               <Shield className="h-4 w-4" />
-              Security
+              Sécurité
             </TabsTrigger>
             <TabsTrigger value="billing" className="flex items-center gap-2">
               <CreditCard className="h-4 w-4" />
-              Billing
+              Facturation
             </TabsTrigger>
             <TabsTrigger value="store" className="flex items-center gap-2">
               <Store className="h-4 w-4" />
-              Store
+              Boutique
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="account">
             <Card className="p-6">
-              <h2 className="text-lg font-semibold mb-4">Account Information</h2>
+              <h2 className="text-lg font-semibold mb-4">Informations du compte</h2>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Label htmlFor="firstName">Prénom</Label>
+                    <Input id="firstName" placeholder="Jean" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Label htmlFor="lastName">Nom</Label>
+                    <Input id="lastName" placeholder="Dupont" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input id="email" type="email" placeholder="john@example.com" />
                 </div>
-                <Button>Save Changes</Button>
+                <Button>Enregistrer les modifications</Button>
               </div>
             </Card>
           </TabsContent>

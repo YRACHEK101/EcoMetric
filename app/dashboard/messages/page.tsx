@@ -44,12 +44,8 @@ const MessagesPage = () => {
           <h1 className="text-2xl font-bold">Messages</h1>
           <div className="flex gap-4">
             <Card className="p-4 bg-blue-50">
-              <p className="text-sm text-blue-600">New Messages</p>
+              <p className="text-sm text-blue-600">Nouveaux Messages</p>
               <p className="text-2xl font-bold text-blue-700">3</p>
-            </Card>
-            <Card className="p-4 bg-gray-50">
-              <p className="text-sm text-gray-600">Total Messages</p>
-              <p className="text-2xl font-bold text-gray-700">12</p>
             </Card>
           </div>
         </div>
@@ -58,13 +54,13 @@ const MessagesPage = () => {
           <div className="flex-1 relative">
             <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search messages..."
+              placeholder="Rechercher des messages..."
               className="pl-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          <Button variant="outline">Mark All as Read</Button>
+          <Button variant="outline">Tout marquer comme lu</Button>
         </div>
 
         <div className="space-y-4">
