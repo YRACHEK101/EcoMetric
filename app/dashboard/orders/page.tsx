@@ -236,8 +236,6 @@ export default function OrdersPage() {
                             ? "secondary"
                             : order.status === "Processing"
                             ? "outline"
-                            : order.status === "Pending"
-                            ? "warning"
                             : "destructive"
                         }
                       >
