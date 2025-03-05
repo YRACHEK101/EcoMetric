@@ -37,7 +37,7 @@ export function RecentSales() {
           <Sale
             name="Olivia Martin"
             email="olivia.martin@email.com"
-            amount="+1 999,00 €"
+            amount="+199,00 €"
             avatarSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="OM"
           />
@@ -51,7 +51,7 @@ export function RecentSales() {
           <Sale
             name="Isabella Nguyen"
             email="isabella.nguyen@email.com"
-            amount="+299,00 €"
+            amount="+99,00 €"
             avatarSrc="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="IN"
           />
