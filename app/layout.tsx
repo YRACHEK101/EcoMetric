@@ -8,8 +8,8 @@ import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'E-commerce Dashboard',
-  description: 'A comprehensive e-commerce dashboard built with Next.js',
+  title: 'EcoMetric Dashboard',
+  description: 'A comprehensive EcoMetric dashboard built with Next.js',
 };
 
 export default function RootLayout({

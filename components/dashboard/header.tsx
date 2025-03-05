@@ -65,7 +65,7 @@ export function Header() {
               )}
             </Button>
           </div>
-          <div className="text-lg font-semibold">E-Commerce</div>
+          <div className="text-lg font-semibold">EcoMetric</div>
         </div>
         
         {/* Mobile Search Input */}

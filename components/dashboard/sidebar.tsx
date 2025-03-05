@@ -77,7 +77,7 @@ export function Sidebar({ isMobile = false }: SidebarProps) {
       <div className="flex h-14 items-center border-b px-4">
         <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
           <ShoppingBag className="h-6 w-6" />
-          <span>E-Commerce</span>
+          <span>EcoMetric</span>
         </Link>
         {isMobile && (
           <Button variant="ghost" size="icon" className="ml-auto">

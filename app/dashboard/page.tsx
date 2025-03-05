@@ -7,8 +7,8 @@ import { ProductInventory } from "@/components/dashboard/product-inventory";
 import { RecentOrders } from "@/components/dashboard/recent-orders";
 
 export const metadata: Metadata = {
-  title: "Tableau de Bord | Administration E-commerce",
-  description: "Vue d'ensemble du tableau de bord d'administration e-commerce",
+  title: "Tableau de Bord | Administration EcoMetric",
+  description: "Vue d'ensemble du tableau de bord d'administration EcoMetric",
 };
 
 export default function DashboardPage() {
