@@ -54,36 +54,36 @@ export function OverviewStats() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <StatCard
-        title="Total Revenue"
-        value="$45,231.89"
-        description="compared to last month"
+        title="Revenu Total"
+        value="45 231,89 €"
+        description="par rapport au mois dernier"
         icon={DollarSign}
         trend="up"
-        trendValue="+20.1%"
+        trendValue="+20,1%"
       />
       <StatCard
-        title="Orders"
+        title="Commandes"
         value="356"
-        description="compared to last month"
+        description="par rapport au mois dernier"
         icon={ShoppingCart}
         trend="up"
-        trendValue="+12.2%"
+        trendValue="+12,2%"
       />
       <StatCard
-        title="Customers"
-        value="2,543"
-        description="compared to last month"
+        title="Clients"
+        value="2 543"
+        description="par rapport au mois dernier"
         icon={Users}
         trend="down"
-        trendValue="-1.5%"
+        trendValue="-1,5%"
       />
       <StatCard
-        title="Products"
+        title="Produits"
         value="124"
-        description="compared to last month"
+        description="par rapport au mois dernier"
         icon={Package}
         trend="up"
-        trendValue="+4.3%"
+        trendValue="+4,3%"
       />
     </div>
   );
