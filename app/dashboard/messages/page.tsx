@@ -17,22 +17,22 @@ import {
 const MessagesPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Mock data - replace with actual data fetching
+  // Données de démonstration - à remplacer par une vraie récupération de données
   const messages = [
     {
       id: "1",
-      sender: "John Doe",
-      subject: "Order Confirmation #123",
-      preview: "Thank you for your recent order...",
-      date: "2025-03-04",
+      sender: "Jean Dupont",
+      subject: "Confirmation de commande #123",
+      preview: "Merci pour votre commande récente...",
+      date: "04/03/2025",
       status: "unread",
     },
     {
       id: "2",
-      sender: "Support Team",
-      subject: "Your Ticket #456",
-      preview: "We've received your support request...",
-      date: "2025-03-03",
+      sender: "Équipe Support",
+      subject: "Votre ticket #456",
+      preview: "Nous avons reçu votre demande de support...",
+      date: "03/03/2025",
       status: "read",
     },
   ];
@@ -78,7 +78,7 @@ const MessagesPage = () => {
                       <h3 className="font-semibold">{message.sender}</h3>
                       {message.status === "unread" && (
                         <Badge variant="default" className="bg-blue-100 text-blue-800">
-                          New
+                          Nouveau
                         </Badge>
                       )}
                     </div>
@@ -96,10 +96,10 @@ const MessagesPage = () => {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem>
-                        <MailOpen className="mr-2 h-4 w-4" /> Mark as Read
+                        <MailOpen className="mr-2 h-4 w-4" /> Marquer comme lu
                       </DropdownMenuItem>
                       <DropdownMenuItem className="text-red-600">
-                        <Trash2 className="mr-2 h-4 w-4" /> Delete
+                        <Trash2 className="mr-2 h-4 w-4" /> Supprimer
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
