@@ -63,75 +63,75 @@ import {
 const products = [
   {
     id: "PROD-1",
-    name: "Wireless Headphones",
-    category: "Electronics",
-    price: "$129.99",
+    name: "Casque Sans Fil",
+    category: "Électronique",
+    price: "129,99 €",
     stock: 45,
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "En Stock",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-2",
-    name: "Smart Watch",
-    category: "Electronics",
-    price: "$199.99",
+    name: "Montre Intelligente",
+    category: "Électronique",
+    price: "199,99 €",
     stock: 28,
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "En Stock",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-3",
-    name: "Laptop Backpack",
-    category: "Accessories",
-    price: "$59.99",
+    name: "Sac à Dos pour Ordinateur Portable",
+    category: "Accessoires",
+    price: "59,99 €",
     stock: 12,
-    status: "Low Stock",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "Stock Faible",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-4",
-    name: "Bluetooth Speaker",
-    category: "Electronics",
-    price: "$79.99",
+    name: "Haut-parleur Bluetooth",
+    category: "Électronique",
+    price: "79,99 €",
     stock: 0,
-    status: "Out of Stock",
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "Rupture de Stock",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-5",
-    name: "Fitness Tracker",
-    category: "Electronics",
-    price: "$89.99",
+    name: "Tracker de Fitness",
+    category: "Électronique",
+    price: "89,99 €",
     stock: 34,
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "En Stock",
+    image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-6",
-    name: "Mechanical Keyboard",
-    category: "Electronics",
-    price: "$149.99",
+    name: "Clavier Mécanique",
+    category: "Électronique",
+    price: "149,99 €",
     stock: 22,
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "En Stock",
+    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-7",
-    name: "Ergonomic Mouse",
-    category: "Electronics",
-    price: "$49.99",
+    name: "Souris Ergonomique",
+    category: "Électronique",
+    price: "49,99 €",
     stock: 18,
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "En Stock",
+    image: "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: "PROD-8",
-    name: "Smartphone Case",
-    category: "Accessories",
-    price: "$19.99",
+    name: "Coque de Smartphone",
+    category: "Accessoires",
+    price: "19,99 €",
     stock: 56,
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1541877590-a1c8d03a2f1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+    status: "En Stock",
+    image: "https://images.unsplash.com/photo-1541877590-a1c8d03a2f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
 ];
 
@@ -149,14 +149,14 @@ export default function ProductsPage() {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Products</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Produits</h1>
             <p className="text-muted-foreground">
-              Manage your product inventory
+              Gérez votre inventaire de produits
             </p>
           </div>
           <Button>
             <Plus className="mr-2 h-4 w-4" />
-            Add Product
+            Ajouter un Produit
           </Button>
         </div>
         
@@ -165,7 +165,7 @@ export default function ProductsPage() {
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search products..."
+              placeholder="Rechercher des produits..."
               className="w-full pl-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -176,24 +176,24 @@ export default function ProductsPage() {
             <div className="flex flex-col sm:flex-row gap-2">
               <Select defaultValue="all">
                 <SelectTrigger className="w-full sm:w-[180px]">
-                  <SelectValue placeholder="Category" />
+                  <SelectValue placeholder="Catégorie" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  <SelectItem value="electronics">Electronics</SelectItem>
-                  <SelectItem value="accessories">Accessories</SelectItem>
-                  <SelectItem value="clothing">Clothing</SelectItem>
+                  <SelectItem value="all">Toutes les Catégories</SelectItem>
+                  <SelectItem value="electronics">Électronique</SelectItem>
+                  <SelectItem value="accessories">Accessoires</SelectItem>
+                  <SelectItem value="clothing">Vêtements</SelectItem>
                 </SelectContent>
               </Select>
               <Select defaultValue="all">
                 <SelectTrigger className="w-full sm:w-[180px]">
-                  <SelectValue placeholder="Status" />
+                  <SelectValue placeholder="Statut" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Status</SelectItem>
-                  <SelectItem value="in-stock">In Stock</SelectItem>
-                  <SelectItem value="low-stock">Low Stock</SelectItem>
-                  <SelectItem value="out-of-stock">Out of Stock</SelectItem>
+                  <SelectItem value="all">Tous les Statuts</SelectItem>
+                  <SelectItem value="in-stock">En Stock</SelectItem>
+                  <SelectItem value="low-stock">Stock Faible</SelectItem>
+                  <SelectItem value="out-of-stock">Rupture de Stock</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -203,49 +203,49 @@ export default function ProductsPage() {
                 <SheetTrigger asChild>
                   <Button variant="outline" className="w-full sm:w-auto md:hidden">
                     <SlidersHorizontal className="mr-2 h-4 w-4" />
-                    Filters
+                    Filtres
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
                   <SheetHeader>
-                    <SheetTitle>Filters</SheetTitle>
+                    <SheetTitle>Filtres</SheetTitle>
                     <SheetDescription>
-                      Filter products by category, status, and more.
+                      Filtrez les produits par catégorie, statut et plus.
                     </SheetDescription>
                   </SheetHeader>
                   <div className="grid gap-4 py-4">
                     <div className="space-y-2">
-                      <h3 className="text-sm font-medium">Category</h3>
+                      <h3 className="text-sm font-medium">Catégorie</h3>
                       <Select defaultValue="all">
                         <SelectTrigger>
-                          <SelectValue placeholder="Category" />
+                          <SelectValue placeholder="Catégorie" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="all">All Categories</SelectItem>
-                          <SelectItem value="electronics">Electronics</SelectItem>
-                          <SelectItem value="accessories">Accessories</SelectItem>
-                          <SelectItem value="clothing">Clothing</SelectItem>
+                          <SelectItem value="all">Toutes les Catégories</SelectItem>
+                          <SelectItem value="electronics">Électronique</SelectItem>
+                          <SelectItem value="accessories">Accessoires</SelectItem>
+                          <SelectItem value="clothing">Vêtements</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-sm font-medium">Status</h3>
+                      <h3 className="text-sm font-medium">Statut</h3>
                       <Select defaultValue="all">
                         <SelectTrigger>
-                          <SelectValue placeholder="Status" />
+                          <SelectValue placeholder="Statut" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="all">All Status</SelectItem>
-                          <SelectItem value="in-stock">In Stock</SelectItem>
-                          <SelectItem value="low-stock">Low Stock</SelectItem>
-                          <SelectItem value="out-of-stock">Out of Stock</SelectItem>
+                          <SelectItem value="all">Tous les Statuts</SelectItem>
+                          <SelectItem value="in-stock">En Stock</SelectItem>
+                          <SelectItem value="low-stock">Stock Faible</SelectItem>
+                          <SelectItem value="out-of-stock">Rupture de Stock</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
                   <SheetFooter>
                     <SheetClose asChild>
-                      <Button>Apply Filters</Button>
+                      <Button>Appliquer les Filtres</Button>
                     </SheetClose>
                   </SheetFooter>
                 </SheetContent>
@@ -253,7 +253,7 @@ export default function ProductsPage() {
               
               <Button variant="outline" className="w-full sm:w-auto hidden md:flex">
                 <Filter className="mr-2 h-4 w-4" />
-                Filters
+                Filtres
               </Button>
             </div>
           </div>
@@ -263,11 +263,11 @@ export default function ProductsPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Product</TableHead>
-                <TableHead className="hidden md:table-cell">Category</TableHead>
-                <TableHead>Price</TableHead>
+                <TableHead>Produit</TableHead>
+                <TableHead className="hidden md:table-cell">Catégorie</TableHead>
+                <TableHead>Prix</TableHead>
                 <TableHead className="hidden md:table-cell">Stock</TableHead>
-                <TableHead>Status</TableHead>
+                <TableHead>Statut</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -275,7 +275,7 @@ export default function ProductsPage() {
               {filteredProducts.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={6} className="h-24 text-center">
-                    No products found.
+                    Aucun produit trouvé.
                   </TableCell>
                 </TableRow>
               ) : (
@@ -301,9 +301,9 @@ export default function ProductsPage() {
                     <TableCell>
                       <Badge
                         variant={
-                          product.status === "In Stock"
+                          product.status === "En Stock"
                             ? "default"
-                            : product.status === "Low Stock"
+                            : product.status === "Stock Faible"
                             ? "outline"
                             : "destructive"
                         }
@@ -323,20 +323,20 @@ export default function ProductsPage() {
                           <DropdownMenuSeparator />
                           <DropdownMenuItem>
                             <Eye className="mr-2 h-4 w-4" />
-                            View
+                            Voir
                           </DropdownMenuItem>
                           <DropdownMenuItem>
                             <Edit className="mr-2 h-4 w-4" />
-                            Edit
+                            Modifier
                           </DropdownMenuItem>
                           <DropdownMenuItem>
                             <Copy className="mr-2 h-4 w-4" />
-                            Duplicate
+                            Dupliquer
                           </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem className="text-destructive">
                             <Trash className="mr-2 h-4 w-4" />
-                            Delete
+                            Supprimer
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -350,8 +350,8 @@ export default function ProductsPage() {
         
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-sm text-muted-foreground order-2 sm:order-1">
-            Showing <strong>1</strong> to <strong>{filteredProducts.length}</strong> of{" "}
-            <strong>{products.length}</strong> products
+            Affichage de <strong>1</strong> à <strong>{filteredProducts.length}</strong> sur{" "}
+            <strong>{products.length}</strong> produits
           </div>
           <Pagination className="order-1 sm:order-2">
             <PaginationContent>
