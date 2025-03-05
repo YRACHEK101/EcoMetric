@@ -14,68 +14,81 @@ import { Badge } from "@/components/ui/badge";
 const products = [
   {
     id: "PROD-1",
-    name: "Wireless Headphones",
-    category: "Electronics",
-    price: "$129.99",
+    name: "Casque Sans Fil",
+    category: "Électronique",
+    price: "129,99 €",
     stock: 45,
-    status: "In Stock",
+    status: "En Stock",
   },
   {
     id: "PROD-2",
-    name: "Smart Watch",
-    category: "Electronics",
-    price: "$199.99",
+    name: "Montre Connectée",
+    category: "Électronique",
+    price: "199,99 €",
     stock: 28,
-    status: "In Stock",
+    status: "En Stock",
   },
   {
     id: "PROD-3",
-    name: "Laptop Backpack",
-    category: "Accessories",
-    price: "$59.99",
+    name: "Sac à Dos pour Ordinateur",
+    category: "Accessoires",
+    price: "59,99 €",
     stock: 12,
-    status: "Low Stock",
+    status: "Stock Faible",
   },
   {
     id: "PROD-4",
-    name: "Bluetooth Speaker",
-    category: "Electronics",
-    price: "$79.99",
+    name: "Enceinte Bluetooth",
+    category: "Électronique",
+    price: "79,99 €",
     stock: 0,
-    status: "Out of Stock",
+    status: "Rupture de Stock",
   },
   {
     id: "PROD-5",
-    name: "Fitness Tracker",
-    category: "Electronics",
-    price: "$89.99",
+    name: "Bracelet Connecté",
+    category: "Électronique",
+    price: "89,99 €",
     stock: 34,
-    status: "In Stock",
+    status: "En Stock",
   },
 ];
 
 export function ProductInventory() {
+  const getVariant = (status: string) => {
+    switch (status) {
+      case "En Stock":
+        return "default";
+      case "Stock Faible":
+        return "outline";
+      case "Rupture de Stock":
+        return "destructive";
+      default:
+        return "default";
+    }
+  };
+
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <div>
-          <CardTitle className="text-xl">Product Inventory</CardTitle>
-          <CardDescription>Manage your product inventory</CardDescription>
+          <CardTitle className="text-xl">Inventaire des Produits</CardTitle>
+          <CardDescription>Gérez votre inventaire de produits</CardDescription>
         </div>
         <Button>
           <Package className="mr-2 h-4 w-4" />
-          Add Product
+          Ajouter un Produit
         </Button>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Product</TableHead>
-              <TableHead>Category</TableHead>
-              <TableHead>Price</TableHead>
+              <TableHead>Produit</TableHead>
+              <TableHead>Catégorie</TableHead>
+              <TableHead>Prix</TableHead>
               <TableHead>Stock</TableHead>
-              <TableHead>Status</TableHead>
+              <TableHead>Statut</TableHead>
               <TableHead className="text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -87,24 +100,16 @@ export function ProductInventory() {
                 <TableCell>{product.price}</TableCell>
                 <TableCell>{product.stock}</TableCell>
                 <TableCell>
-                  <Badge
-                    variant={
-                      product.status === "In Stock"
-                        ? "default"
-                        : product.status === "Low Stock"
-                        ? "outline"
-                        : "destructive"
-                    }
-                  >
+                  <Badge variant={getVariant(product.status)}>
                     {product.status}
                   </Badge>
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-end gap-2">
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" title="Modifier">
                       <Edit className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" title="Supprimer">
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </div>
