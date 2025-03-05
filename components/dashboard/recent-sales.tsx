@@ -51,7 +51,7 @@ export function RecentSales() {
           <Sale
             name="Isabella Nguyen"
             email="isabella.nguyen@email.com"
-            amount="+99,00 €"
+            amount="+99,0 €"
             avatarSrc="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="IN"
           />

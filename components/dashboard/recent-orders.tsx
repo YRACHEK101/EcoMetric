@@ -13,58 +13,71 @@ import { Eye } from "lucide-react";
 
 const orders = [
   {
-    id: "ORD-7352",
-    customer: "John Smith",
-    date: "2025-02-14",
-    total: "$129.99",
-    status: "Delivered",
+    id: "CMD-7352",
+    customer: "Jean Dupont",
+    date: "14/02/2025",
+    total: "129,99 €",
+    status: "Livré",
   },
   {
-    id: "ORD-7353",
-    customer: "Sarah Johnson",
-    date: "2025-02-14",
-    total: "$259.98",
-    status: "Processing",
+    id: "CMD-7353",
+    customer: "Sarah Martin",
+    date: "14/02/2025",
+    total: "259,98 €",
+    status: "En cours",
   },
   {
-    id: "ORD-7354",
-    customer: "Michael Brown",
-    date: "2025-02-13",
-    total: "$89.99",
-    status: "Shipped",
+    id: "CMD-7354",
+    customer: "Michel Brun",
+    date: "13/02/2025",
+    total: "89,99 €",
+    status: "Expédié",
   },
   {
-    id: "ORD-7355",
-    customer: "Emily Davis",
-    date: "2025-02-13",
-    total: "$199.99",
-    status: "Pending",
+    id: "CMD-7355",
+    customer: "Emma Davis",
+    date: "13/02/2025",
+    total: "199,99 €",
+    status: "En attente",
   },
   {
-    id: "ORD-7356",
+    id: "CMD-7356",
     customer: "David Wilson",
-    date: "2025-02-12",
-    total: "$149.99",
-    status: "Delivered",
+    date: "12/02/2025",
+    total: "149,99 €",
+    status: "Livré",
   },
 ];
 
 export function RecentOrders() {
+  const getVariant = (status: string) => {
+    switch (status) {
+      case "Livré":
+        return "default";
+      case "Expédié":
+        return "secondary";
+      case "En cours":
+        return "outline";
+      default:
+        return "destructive";
+    }
+  };
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Recent Orders</CardTitle>
-        <CardDescription>Manage your recent customer orders</CardDescription>
+        <CardTitle>Commandes Récentes</CardTitle>
+        <CardDescription>Gérez vos commandes clients récentes</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Order ID</TableHead>
-              <TableHead>Customer</TableHead>
+              <TableHead>N° Commande</TableHead>
+              <TableHead>Client</TableHead>
               <TableHead>Date</TableHead>
               <TableHead>Total</TableHead>
-              <TableHead>Status</TableHead>
+              <TableHead>Statut</TableHead>
               <TableHead className="text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -76,24 +89,14 @@ export function RecentOrders() {
                 <TableCell>{order.date}</TableCell>
                 <TableCell>{order.total}</TableCell>
                 <TableCell>
-                  <Badge
-                    variant={
-                      order.status === "Delivered"
-                        ? "default"
-                        : order.status === "Shipped"
-                        ? "secondary"
-                        : order.status === "Processing"
-                        ? "outline"
-                        : "destructive"
-                    }
-                  >
+                  <Badge variant={getVariant(order.status)}>
                     {order.status}
                   </Badge>
                 </TableCell>
                 <TableCell className="text-right">
                   <Button variant="ghost" size="sm">
                     <Eye className="mr-2 h-4 w-4" />
-                    View
+                    Voir
                   </Button>
                 </TableCell>
               </TableRow>
