@@ -51,14 +51,14 @@ import { Badge } from "@/components/ui/badge";
 
 const customers = [
   {
-    id: "CUST-001",
-    name: "John Smith",
-    email: "john.smith@example.com",
-    status: "Active",
+    id: "CLI-001",
+    name: "Jean Dupont",
+    email: "jean.dupont@exemple.fr",
+    status: "Actif",
     orders: 5,
-    spent: "$649.95",
-    lastOrder: "2025-02-14",
-    joined: "2024-11-05",
+    spent: "649,95 €",
+    lastOrder: "14/02/2025",
+    joined: "05/11/2024",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
@@ -154,14 +154,14 @@ export default function CustomersPage() {
       <div className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Customers</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Clients</h1>
             <p className="text-muted-foreground">
-              Manage your customer database
+              Gérez votre base de données clients
             </p>
           </div>
           <Button>
             <Mail className="mr-2 h-4 w-4" />
-            Email All
+            Envoyer un email groupé
           </Button>
         </div>
         
@@ -171,7 +171,7 @@ export default function CustomersPage() {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search customers..."
+                placeholder="Rechercher des clients..."
                 className="w-full pl-8"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -181,28 +181,28 @@ export default function CustomersPage() {
           <div className="flex flex-col gap-2 sm:flex-row">
             <Select defaultValue="all">
               <SelectTrigger className="w-full sm:w-[180px]">
-                <SelectValue placeholder="Status" />
+                <SelectValue placeholder="Statut" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Status</SelectItem>
-                <SelectItem value="active">Active</SelectItem>
-                <SelectItem value="inactive">Inactive</SelectItem>
+                <SelectItem value="all">Tous les statuts</SelectItem>
+                <SelectItem value="active">Actif</SelectItem>
+                <SelectItem value="inactive">Inactif</SelectItem>
               </SelectContent>
             </Select>
             <Select defaultValue="all">
               <SelectTrigger className="w-full sm:w-[180px]">
-                <SelectValue placeholder="Join Date" />
+                <SelectValue placeholder="Date d'inscription" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Time</SelectItem>
-                <SelectItem value="this-month">This Month</SelectItem>
-                <SelectItem value="last-month">Last Month</SelectItem>
-                <SelectItem value="this-year">This Year</SelectItem>
+                <SelectItem value="all">Toutes les périodes</SelectItem>
+                <SelectItem value="this-month">Ce mois-ci</SelectItem>
+                <SelectItem value="last-month">Mois dernier</SelectItem>
+                <SelectItem value="this-year">Cette année</SelectItem>
               </SelectContent>
             </Select>
             <Button variant="outline" className="w-full sm:w-auto">
               <Filter className="mr-2 h-4 w-4" />
-              Filters
+              Filtres
             </Button>
           </div>
         </div>
@@ -211,12 +211,12 @@ export default function CustomersPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Customer</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Orders</TableHead>
-                <TableHead>Spent</TableHead>
-                <TableHead>Last Order</TableHead>
-                <TableHead>Joined</TableHead>
+                <TableHead>Client</TableHead>
+                <TableHead>Statut</TableHead>
+                <TableHead>Commandes</TableHead>
+                <TableHead>Dépenses</TableHead>
+                <TableHead>Dernière commande</TableHead>
+                <TableHead>Inscription</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -224,7 +224,7 @@ export default function CustomersPage() {
               {filteredCustomers.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={7} className="h-24 text-center">
-                    No customers found.
+                    Aucun client trouvé.
                   </TableCell>
                 </TableRow>
               ) : (
@@ -265,24 +265,24 @@ export default function CustomersPage() {
                           <DropdownMenuSeparator />
                           <DropdownMenuItem>
                             <Eye className="mr-2 h-4 w-4" />
-                            View Profile
+                            Voir le profil
                           </DropdownMenuItem>
                           <DropdownMenuItem>
                             <Edit className="mr-2 h-4 w-4" />
-                            Edit Details
+                            Modifier les détails
                           </DropdownMenuItem>
                           <DropdownMenuItem>
                             <ShoppingBag className="mr-2 h-4 w-4" />
-                            View Orders
+                            Voir les commandes
                           </DropdownMenuItem>
                           <DropdownMenuItem>
                             <Mail className="mr-2 h-4 w-4" />
-                            Send Email
+                            Envoyer un email
                           </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem className="text-destructive">
                             <Trash className="mr-2 h-4 w-4" />
-                            Delete
+                            Supprimer
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -296,8 +296,8 @@ export default function CustomersPage() {
         
         <div className="flex items-center justify-between">
           <div className="text-sm text-muted-foreground">
-            Showing <strong>1</strong> to <strong>{filteredCustomers.length}</strong> of{" "}
-            <strong>{customers.length}</strong> customers
+            Affichage de <strong>1</strong> à <strong>{filteredCustomers.length}</strong> sur{" "}
+            <strong>{customers.length}</strong> clients
           </div>
           <Pagination>
             <PaginationContent>
