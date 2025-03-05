@@ -47,18 +47,46 @@ const PaymentsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [statusFilter, setStatusFilter] = useState("all");
 
-  // Mock data - replace with actual data fetching
+  // Données de démonstration - à remplacer par une vraie récupération de données
   const payments = [
     {
-      id: "INV-001",
-      date: "2025-03-04",
-      amount: "$234.00",
-      status: "completed",
-      method: "Credit Card",
-      customer: "John Doe"
+      id: "FACT-001",
+      date: "04/03/2025",
+      amount: "234,00 €",
+      status: "complété",
+      method: "Carte Bancaire",
+      customer: "Jean Dupont"
     },
-    // Add more mock payments as needed
+    {
+      id: "FACT-002",
+      date: "04/03/2025",
+      amount: "567,00 €",
+      status: "en attente",
+      method: "PayPal",
+      customer: "Marie Martin"
+    },
+    {
+      id: "FACT-003",
+      date: "03/03/2025",
+      amount: "123,50 €",
+      status: "échoué",
+      method: "Virement Bancaire",
+      customer: "Pierre Durant"
+    }
   ];
+
+  const getStatusBadgeVariant = (status: string) => {
+    switch (status) {
+      case "complété":
+        return "bg-green-100 text-green-800";
+      case "en attente":
+        return "bg-yellow-100 text-yellow-800";
+      case "échoué":
+        return "bg-red-100 text-red-800";
+      default:
+        return "bg-gray-100 text-gray-800";
+    }
+  };
 
   return (
     <DashboardLayout>
@@ -68,7 +96,7 @@ const PaymentsPage = () => {
           <div className="flex gap-4">
             <Card className="p-4 bg-green-50">
               <p className="text-sm text-green-600">Revenu Total</p>
-              <p className="text-2xl font-bold text-green-700">12,345 €</p>
+              <p className="text-2xl font-bold text-green-700">12 345,00 €</p>
             </Card>
             <Card className="p-4 bg-blue-50">
               <p className="text-sm text-blue-600">Paiements en attente</p>
@@ -81,7 +109,7 @@ const PaymentsPage = () => {
           <div className="flex-1 relative">
             <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search payments..."
+              placeholder="Rechercher des paiements..."
               className="pl-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -89,13 +117,13 @@ const PaymentsPage = () => {
           </div>
           <Select value={statusFilter} onValueChange={setStatusFilter}>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filter by status" />
+              <SelectValue placeholder="Filtrer par statut" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Status</SelectItem>
-              <SelectItem value="completed">Completed</SelectItem>
-              <SelectItem value="pending">Pending</SelectItem>
-              <SelectItem value="failed">Failed</SelectItem>
+              <SelectItem value="all">Tous les statuts</SelectItem>
+              <SelectItem value="completed">Complété</SelectItem>
+              <SelectItem value="pending">En attente</SelectItem>
+              <SelectItem value="failed">Échoué</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -110,28 +138,30 @@ const PaymentsPage = () => {
                 <TableHead>Montant</TableHead>
                 <TableHead>Méthode de paiement</TableHead>
                 <TableHead>Statut</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {payments.map((payment) => (
-                <TableRow key={payment.id}>
-                  <TableCell className="font-medium">{payment.id}</TableCell>
-                  <TableCell>{payment.date}</TableCell>
-                  <TableCell>{payment.customer}</TableCell>
-                  <TableCell>{payment.amount}</TableCell>
-                  <TableCell>{payment.method}</TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-2">
-                      <Badge 
-                        variant={payment.status === "completed" ? "default" : "secondary"}
-                        className={
-                          payment.status === "completed" 
-                            ? "bg-green-100 text-green-800" 
-                            : "bg-yellow-100 text-yellow-800"
-                        }
-                      >
+              {payments.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={7} className="h-24 text-center">
+                    Aucun paiement trouvé.
+                  </TableCell>
+                </TableRow>
+              ) : (
+                payments.map((payment) => (
+                  <TableRow key={payment.id}>
+                    <TableCell className="font-medium">{payment.id}</TableCell>
+                    <TableCell>{payment.date}</TableCell>
+                    <TableCell>{payment.customer}</TableCell>
+                    <TableCell>{payment.amount}</TableCell>
+                    <TableCell>{payment.method}</TableCell>
+                    <TableCell>
+                      <Badge className={getStatusBadgeVariant(payment.status)}>
                         {payment.status}
                       </Badge>
+                    </TableCell>
+                    <TableCell className="text-right">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" className="h-8 w-8 p-0">
@@ -140,34 +170,40 @@ const PaymentsPage = () => {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem>
-                            <Eye className="mr-2 h-4 w-4" /> View Details
+                            <Eye className="mr-2 h-4 w-4" /> Voir les détails
                           </DropdownMenuItem>
                           <DropdownMenuItem>
-                            <FileText className="mr-2 h-4 w-4" /> Download Invoice
+                            <FileText className="mr-2 h-4 w-4" /> Télécharger la facture
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
+                    </TableCell>
+                  </TableRow>
+                ))
+              )}
             </TableBody>
           </Table>
         </Card>
 
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious onClick={() => setCurrentPage(p => Math.max(1, p - 1))} />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink>{currentPage}</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext onClick={() => setCurrentPage(p => p + 1)} />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">
+            Affichage de <strong>1</strong> à <strong>{payments.length}</strong> sur{" "}
+            <strong>{payments.length}</strong> paiements
+          </p>
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious onClick={() => setCurrentPage(p => Math.max(1, p - 1))} />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink>{currentPage}</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext onClick={() => setCurrentPage(p => p + 1)} />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
       </div>
     </DashboardLayout>
   );
