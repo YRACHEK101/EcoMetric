@@ -34,7 +34,7 @@ const SettingsPage = () => {
     <DashboardLayout>
       <div className="container mx-auto p-4 space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Settings</h1>
+          <h1 className="text-2xl font-bold">Paramètres</h1>
         </div>
 
         <Tabs defaultValue="account" className="space-y-4">
@@ -63,7 +63,7 @@ const SettingsPage = () => {
 
           <TabsContent value="account">
             <Card className="p-6">
-              <h2 className="text-lg font-semibold mb-4">Informations du compte</h2>
+              <h2 className="text-lg font-semibold mb-4">Informations du Compte</h2>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -77,7 +77,7 @@ const SettingsPage = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" />
+                  <Input id="email" type="email" placeholder="jean@exemple.fr" />
                 </div>
                 <Button>Enregistrer les modifications</Button>
               </div>
@@ -86,88 +86,114 @@ const SettingsPage = () => {
 
           <TabsContent value="notifications">
             <Card className="p-6">
-              <h2 className="text-lg font-semibold mb-4">Notification Preferences</h2>
+              <h2 className="text-lg font-semibold mb-4">Préférences de Notification</h2>
               <div className="space-y-4">
-                {Object.entries(notifications).map(([key, value]) => (
-                  <div key={key} className="flex items-center justify-between">
-                    <Label htmlFor={key} className="capitalize">
-                      {key.replace('_', ' ')} Notifications
-                    </Label>
-                    <Switch
-                      id={key}
-                      checked={value}
-                      onCheckedChange={(checked) =>
-                        setNotifications(prev => ({ ...prev, [key]: checked }))
-                      }
-                    />
-                  </div>
-                ))}
-                <Button>Save Preferences</Button>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="email">Notifications par email</Label>
+                  <Switch
+                    id="email"
+                    checked={notifications.email}
+                    onCheckedChange={(checked) =>
+                      setNotifications(prev => ({ ...prev, email: checked }))
+                    }
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="push">Notifications push</Label>
+                  <Switch
+                    id="push"
+                    checked={notifications.push}
+                    onCheckedChange={(checked) =>
+                      setNotifications(prev => ({ ...prev, push: checked }))
+                    }
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="orders">Notifications de commandes</Label>
+                  <Switch
+                    id="orders"
+                    checked={notifications.orders}
+                    onCheckedChange={(checked) =>
+                      setNotifications(prev => ({ ...prev, orders: checked }))
+                    }
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="marketing">Notifications marketing</Label>
+                  <Switch
+                    id="marketing"
+                    checked={notifications.marketing}
+                    onCheckedChange={(checked) =>
+                      setNotifications(prev => ({ ...prev, marketing: checked }))
+                    }
+                  />
+                </div>
+                <Button>Enregistrer les préférences</Button>
               </div>
             </Card>
           </TabsContent>
 
           <TabsContent value="security">
             <Card className="p-6">
-              <h2 className="text-lg font-semibold mb-4">Security Settings</h2>
+              <h2 className="text-lg font-semibold mb-4">Paramètres de Sécurité</h2>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="currentPassword">Current Password</Label>
+                  <Label htmlFor="currentPassword">Mot de passe actuel</Label>
                   <Input id="currentPassword" type="password" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="newPassword">New Password</Label>
+                  <Label htmlFor="newPassword">Nouveau mot de passe</Label>
                   <Input id="newPassword" type="password" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword">Confirm New Password</Label>
+                  <Label htmlFor="confirmPassword">Confirmer le mot de passe</Label>
                   <Input id="confirmPassword" type="password" />
                 </div>
-                <Button>Update Password</Button>
+                <Button>Mettre à jour le mot de passe</Button>
               </div>
             </Card>
           </TabsContent>
 
           <TabsContent value="billing">
             <Card className="p-6">
-              <h2 className="text-lg font-semibold mb-4">Billing Settings</h2>
+              <h2 className="text-lg font-semibold mb-4">Paramètres de Facturation</h2>
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-md font-medium">Payment Methods</h3>
+                  <h3 className="text-md font-medium">Moyens de paiement</h3>
                   <div className="border rounded-lg p-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <CreditCard className="h-6 w-6" />
                       <div>
                         <p className="font-medium">•••• •••• •••• 4242</p>
-                        <p className="text-sm text-gray-500">Expires 04/2024</p>
+                        <p className="text-sm text-gray-500">Expire le 04/2024</p>
                       </div>
                     </div>
-                    <Button variant="outline" size="sm">Edit</Button>
+                    <Button variant="outline" size="sm">Modifier</Button>
                   </div>
-                  <Button variant="outline" className="w-full">Add New Payment Method</Button>
+                  <Button variant="outline" className="w-full">Ajouter un moyen de paiement</Button>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-md font-medium">Billing Address</h3>
+                  <h3 className="text-md font-medium">Adresse de facturation</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="address">Street Address</Label>
-                      <Input id="address" placeholder="123 Main St" />
+                      <Label htmlFor="address">Adresse</Label>
+                      <Input id="address" placeholder="123 rue Principale" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="city">City</Label>
-                      <Input id="city" placeholder="New York" />
+                      <Label htmlFor="city">Ville</Label>
+                      <Input id="city" placeholder="Paris" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="state">State</Label>
-                      <Input id="state" placeholder="NY" />
+                      <Label htmlFor="state">Région</Label>
+                      <Input id="state" placeholder="Île-de-France" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="zipCode">ZIP Code</Label>
-                      <Input id="zipCode" placeholder="10001" />
+                      <Label htmlFor="zipCode">Code postal</Label>
+                      <Input id="zipCode" placeholder="75001" />
                     </div>
                   </div>
-                  <Button>Update Billing Address</Button>
+                  <Button>Mettre à jour l'adresse</Button>
                 </div>
               </div>
             </Card>
@@ -175,47 +201,47 @@ const SettingsPage = () => {
 
           <TabsContent value="store">
             <Card className="p-6">
-              <h2 className="text-lg font-semibold mb-4">Store Settings</h2>
+              <h2 className="text-lg font-semibold mb-4">Paramètres de la Boutique</h2>
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-md font-medium">Store Information</h3>
+                  <h3 className="text-md font-medium">Informations de la boutique</h3>
                   <div className="space-y-2">
-                    <Label htmlFor="storeName">Store Name</Label>
-                    <Input id="storeName" placeholder="My Awesome Store" />
+                    <Label htmlFor="storeName">Nom de la boutique</Label>
+                    <Input id="storeName" placeholder="Ma Super Boutique" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="storeDescription">Store Description</Label>
-                    <Input id="storeDescription" placeholder="Your store description" />
+                    <Label htmlFor="storeDescription">Description de la boutique</Label>
+                    <Input id="storeDescription" placeholder="Description de votre boutique" />
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-md font-medium">Business Hours</h3>
+                  <h3 className="text-md font-medium">Horaires d'ouverture</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="openTime">Opening Time</Label>
+                      <Label htmlFor="openTime">Heure d'ouverture</Label>
                       <Input id="openTime" type="time" defaultValue="09:00" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="closeTime">Closing Time</Label>
+                      <Label htmlFor="closeTime">Heure de fermeture</Label>
                       <Input id="closeTime" type="time" defaultValue="17:00" />
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-md font-medium">Store Preferences</h3>
+                  <h3 className="text-md font-medium">Préférences de la boutique</h3>
                   <div className="flex items-center justify-between">
-                    <Label htmlFor="storeStatus">Store Status</Label>
+                    <Label htmlFor="storeStatus">Statut de la boutique</Label>
                     <Switch id="storeStatus" defaultChecked />
                   </div>
                   <div className="flex items-center justify-between">
-                    <Label htmlFor="inventory">Auto-update Inventory</Label>
+                    <Label htmlFor="inventory">Mise à jour automatique du stock</Label>
                     <Switch id="inventory" />
                   </div>
                 </div>
                 
-                <Button>Save Store Settings</Button>
+                <Button>Enregistrer les paramètres</Button>
               </div>
             </Card>
           </TabsContent>
