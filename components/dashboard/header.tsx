@@ -27,7 +27,7 @@ export function Header() {
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="mr-2">
               <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
+              <span className="sr-only">Basculer le menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="p-0">
@@ -43,7 +43,7 @@ export function Header() {
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search..."
+              placeholder="Rechercher..."
               className="w-full appearance-none bg-background pl-8 md:w-2/3 lg:w-1/3"
             />
           </div>
@@ -75,7 +75,7 @@ export function Header() {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search..."
+                placeholder="Rechercher..."
                 className="w-full appearance-none bg-background pl-8"
                 autoFocus
               />
@@ -105,11 +105,11 @@ export function Header() {
                       <Bell className="h-4 w-4" />
                     </span>
                     <div className="grid gap-1">
-                      <p className="text-sm font-medium">New order received</p>
+                      <p className="text-sm font-medium">Nouvelle commande reçue</p>
                       <p className="text-xs text-muted-foreground">
-                        Order #{1000 + i} has been placed
+                        La commande n°{1000 + i} a été passée
                       </p>
-                      <p className="text-xs text-muted-foreground">2 min ago</p>
+                      <p className="text-xs text-muted-foreground">il y a 2 minutes</p>
                     </div>
                   </div>
                 </DropdownMenuItem>
@@ -128,13 +128,13 @@ export function Header() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuLabel>Mon Compte</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Profil</DropdownMenuItem>
+            <DropdownMenuItem>Paramètres</DropdownMenuItem>
+            <DropdownMenuItem>Facturation</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem>Déconnexion</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
