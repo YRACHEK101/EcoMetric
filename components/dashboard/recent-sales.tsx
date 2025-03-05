@@ -29,43 +29,43 @@ export function RecentSales() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>Recent Sales</CardTitle>
-        <CardDescription>You made 265 sales this month.</CardDescription>
+        <CardTitle>Ventes Récentes</CardTitle>
+        <CardDescription>Vous avez réalisé 265 ventes ce mois-ci.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-8">
           <Sale
             name="Olivia Martin"
             email="olivia.martin@email.com"
-            amount="+$1,999.00"
+            amount="+1 999,00 €"
             avatarSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="OM"
           />
           <Sale
             name="Jackson Lee"
             email="jackson.lee@email.com"
-            amount="+$39.00"
+            amount="+39,00 €"
             avatarSrc="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="JL"
           />
           <Sale
             name="Isabella Nguyen"
             email="isabella.nguyen@email.com"
-            amount="+$299.00"
+            amount="+299,00 €"
             avatarSrc="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="IN"
           />
           <Sale
             name="William Kim"
             email="will.kim@email.com"
-            amount="+$99.00"
+            amount="+99,00 €"
             avatarSrc="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="WK"
           />
           <Sale
             name="Sofia Davis"
             email="sofia.davis@email.com"
-            amount="+$39.00"
+            amount="+39,00 €"
             avatarSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             avatarFallback="SD"
           />
