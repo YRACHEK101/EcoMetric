@@ -7,8 +7,8 @@ import { ProductInventory } from "@/components/dashboard/product-inventory";
 import { RecentOrders } from "@/components/dashboard/recent-orders";
 
 export const metadata: Metadata = {
-  title: "Dashboard | E-commerce Admin",
-  description: "E-commerce admin dashboard overview",
+  title: "Tableau de Bord | Administration E-commerce",
+  description: "Vue d'ensemble du tableau de bord d'administration e-commerce",
 };
 
 export default function DashboardPage() {
@@ -16,9 +16,9 @@ export default function DashboardPage() {
     <DashboardLayout>
       <div className="flex flex-col gap-6">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Tableau de Bord</h1>
           <p className="text-muted-foreground">
-            Welcome back! Here's an overview of your store.
+            Bon retour ! Voici un aperçu de votre boutique.
           </p>
         </div>
         
