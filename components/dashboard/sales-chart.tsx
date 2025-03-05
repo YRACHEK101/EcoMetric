@@ -17,43 +17,43 @@ import {
 
 const data = [
   { name: "Jan", total: 1500 },
-  { name: "Feb", total: 2300 },
+  { name: "Fév", total: 2300 },
   { name: "Mar", total: 3200 },
-  { name: "Apr", total: 2800 },
-  { name: "May", total: 3600 },
-  { name: "Jun", total: 4100 },
-  { name: "Jul", total: 4800 },
-  { name: "Aug", total: 5200 },
+  { name: "Avr", total: 2800 },
+  { name: "Mai", total: 3600 },
+  { name: "Juin", total: 4100 },
+  { name: "Juil", total: 4800 },
+  { name: "Aoû", total: 5200 },
   { name: "Sep", total: 4700 },
   { name: "Oct", total: 5500 },
   { name: "Nov", total: 6100 },
-  { name: "Dec", total: 7500 },
+  { name: "Déc", total: 7500 },
 ];
 
 const categoryData = [
-  { name: "Electronics", value: 35 },
-  { name: "Clothing", value: 25 },
-  { name: "Home & Kitchen", value: 20 },
-  { name: "Books", value: 10 },
-  { name: "Others", value: 10 },
+  { name: "Électronique", value: 35 },
+  { name: "Vêtements", value: 25 },
+  { name: "Maison & Cuisine", value: 20 },
+  { name: "Livres", value: 10 },
+  { name: "Autres", value: 10 },
 ];
 
 export function SalesChart() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>Sales Overview</CardTitle>
+        <CardTitle>Aperçu des Ventes</CardTitle>
         <CardDescription>
-          View your sales data across different time periods
+          Consultez vos données de ventes sur différentes périodes
         </CardDescription>
       </CardHeader>
       <CardContent className="pl-2">
         <Tabs defaultValue="yearly">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 md:w-auto">
-            <TabsTrigger value="yearly">Yearly</TabsTrigger>
-            <TabsTrigger value="monthly">Monthly</TabsTrigger>
-            <TabsTrigger value="weekly">Weekly</TabsTrigger>
-            <TabsTrigger value="categories">Categories</TabsTrigger>
+            <TabsTrigger value="yearly">Annuel</TabsTrigger>
+            <TabsTrigger value="monthly">Mensuel</TabsTrigger>
+            <TabsTrigger value="weekly">Hebdomadaire</TabsTrigger>
+            <TabsTrigger value="categories">Catégories</TabsTrigger>
           </TabsList>
           <TabsContent value="yearly" className="h-[300px] mt-4">
             <ResponsiveContainer width="100%" height="100%">
@@ -75,8 +75,8 @@ export function SalesChart() {
                   allowDecimals={false}
                 />
                 <Tooltip 
-                  formatter={(value) => [`$${value}`, 'Revenue']}
-                  labelFormatter={(label) => `Month: ${label}`}
+                  formatter={(value) => [`${value} €`, 'Revenu']}
+                  labelFormatter={(label) => `Mois: ${label}`}
                 />
                 <Area 
                   type="monotone" 
@@ -123,13 +123,13 @@ export function SalesChart() {
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
                 data={[
-                  { name: "Mon", total: 500 },
-                  { name: "Tue", total: 650 },
-                  { name: "Wed", total: 800 },
-                  { name: "Thu", total: 900 },
-                  { name: "Fri", total: 1200 },
-                  { name: "Sat", total: 1500 },
-                  { name: "Sun", total: 1000 },
+                  { name: "Lun", total: 500 },
+                  { name: "Mar", total: 650 },
+                  { name: "Mer", total: 800 },
+                  { name: "Jeu", total: 900 },
+                  { name: "Ven", total: 1200 },
+                  { name: "Sam", total: 1500 },
+                  { name: "Dim", total: 1000 },
                 ]}
                 margin={{
                   top: 10,
@@ -147,8 +147,8 @@ export function SalesChart() {
                   allowDecimals={false}
                 />
                 <Tooltip 
-                  formatter={(value) => [`$${value}`, 'Revenue']}
-                  labelFormatter={(label) => `Day: ${label}`}
+                  formatter={(value) => [`${value} €`, 'Revenu']}
+                  labelFormatter={(label) => `Jour: ${label}`}
                 />
                 <Area 
                   type="monotone" 
@@ -179,13 +179,13 @@ export function SalesChart() {
                   allowDecimals={false}
                 />
                 <Tooltip 
-                  formatter={(value) => [`${value}%`, 'Percentage']}
-                  labelFormatter={(label) => `Category: ${label}`}
+                  formatter={(value) => [`${value}%`, 'Pourcentage']}
+                  labelFormatter={(label) => `Catégorie: ${label}`}
                 />
                 <Legend />
                 <Bar 
                   dataKey="value" 
-                  name="Sales Percentage" 
+                  name="Pourcentage des ventes" 
                   fill="hsl(var(--chart-4))" 
                 />
               </BarChart>
