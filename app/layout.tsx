@@ -8,8 +8,8 @@ import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'EcoMetric Dashboard',
-  description: 'A comprehensive EcoMetric dashboard built with Next.js',
+  title: 'EcoMetric',
+  description: 'Un tableau de bord EcoMetric complet construit avec Next.js',
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
